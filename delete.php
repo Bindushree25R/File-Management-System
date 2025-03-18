@@ -1,0 +1,1 @@
+<?php include '../auth.php'; if($_SESSION['role']!='admin'&&$_SESSION['role']!='teamlead'){echo 'Access denied';exit;} $f=$_GET['f']??'';$cat=$_GET['cat']??''; $path='../SubFolder/uploads/'.$cat.'/'.$f; if(file_exists($path)){unlink($path);} header('Location: index.php'); ?>
